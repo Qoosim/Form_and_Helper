@@ -1,3 +1,4 @@
+<!--
 <div class="title">
   <h1>Create A New User</h1>
 </div>
@@ -22,3 +23,38 @@
     </form>
   </div>
 </div>
+-->
+
+<!--
+<%= form_tag('/user') do -%>
+  <%= label_tag 'username' %><br>
+  <%= text_field_tag 'username' %><br><br>
+
+  <%= label_tag 'email' %><br>
+  <%= text_field_tag 'email' %><br><br>
+
+  <%= label_tag 'password' %><br>
+  <%= password_field_tag 'password' %><br><br>
+
+  <%= label_tag 'password_confirmation' %><br>
+  <%= password_field_tag 'password_confirmation' %><br><br>
+
+  <%= submit_tag 'Submits' %>
+<% end -%>
+-->
+
+<%= form_for(@user) do |f| %>
+  <%= f.label :username %><br>
+  <%= f.text_field :username %><br><br>
+
+  <%= f.label :email %><br>
+  <%= f.text_field :email %><br><br>
+
+  <%= f.label :password %><br>
+  <%= f.password_field :password %><br><br>
+
+  <%= f.label :password_confirmation %><br>
+  <%= f.password_field :password_confirmation %><br><br>
+
+  <%= f.submit 'Create' %>
+<% end %>
