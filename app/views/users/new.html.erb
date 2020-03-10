@@ -3,20 +3,22 @@
 </div>
 <div class="outer-container">
   <div class="form-container">
-    <form action="/users/new" method="post">
+    <form action="/users" method="post" accept-charset="UTF-8">
       <label for="username">Username</label><br>
-      <input id="username" name="username" type="text"><br><br>
+      <input id="username" name="user[username]" type="text"><br><br>
 
       <label for="email">Email</label><br>
-      <input id="email" name="email" type="text"><br><br>
+      <input id="email" name="user[email]" type="text"><br><br>
 
       <label for="password">Password</label><br>
-      <input id="password" name="password" type="password"><br><br>
+      <input id="password" name="user[password]" type="password"><br><br>
 
       <label for="password_confirmation">Confirm Password</label><br>
-      <input id="password_confirmation" name="password_confirmation" type="password"><br><br>
+      <input id="password_confirmation" name="user[password_confirmation]" type="password"><br><br>
     
       <button type="submit">Submit</button>
+
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
     </form>
   </div>
 </div>
