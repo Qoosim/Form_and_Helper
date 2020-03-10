@@ -46,6 +46,15 @@
 <div class="outer-container">
   <div class="form-container">
     <%= form_for(@user) do |f| %>
+
+      <% if @user.errors.any? %>
+        <%= pluralize(@user.errors.count, 'error')%> prevented this form from being saved
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      <% end %>
       <%= f.label :username %><br>
       <%= f.text_field :username %><br><br>
 
