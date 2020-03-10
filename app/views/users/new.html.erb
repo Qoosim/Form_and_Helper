@@ -27,7 +27,7 @@
 -->
 
 <!--
-<%= form_tag('/user') do -%>
+<%= form_tag users_path do -%>
   <%= label_tag 'username' %><br>
   <%= text_field_tag 'username' %><br><br>
 
@@ -43,6 +43,7 @@
   <%= submit_tag 'Submits' %>
 <% end -%>
 -->
+
 <div class="outer-container">
   <div class="form-container">
     <%= form_for(@user) do |f| %>
