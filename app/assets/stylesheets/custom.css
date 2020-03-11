@@ -1,0 +1,81 @@
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+html,
+body {
+  font: normal 16px/16px 'Montserrat';
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.outer-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 100vw;
+  top: 200px;
+  margin-top: 20px;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: auto;
+  margin-top: 30px;
+}
+
+.title h1 {
+  width: 500px;
+  font-size: 42px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: flex-start;
+  width: 500px;
+  height: 600px;
+  background-color: #a6b1e1;
+  border-radius: 15px;
+  -webkit-box-shadow: inset 2px 2px 5px -2px rgba(66,72,116,1);
+  -moz-box-shadow: inset 2px 2px 5px -2px rgba(66,72,116,1);
+  box-shadow: inset 2px 2px 5px -2px rgba(66,72,116,1);
+  padding-top: 60px;
+}
+
+.form-container form label {
+  font-size: 20px;
+  margin-left: 8px;
+}
+
+.form-container form input {
+  width: 400px;
+  height: 36px;
+  margin-bottom: 20px;
+  margin-top: 8px;
+  border-radius: 6px;
+  padding-left: 10px;
+  font-size: 16px;
+}
+
+.form-container form button {
+  width: 160px;
+  position: relative;
+  height: 40px;
+  border-radius: 5px;
+  padding: 8px 16px;
+  font-size: 20px;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #d63447;
+  color: white;
+  border: 2px solid #86212C;
+}
