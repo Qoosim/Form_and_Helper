@@ -9,3 +9,4 @@ files:
     - "Guardfile"
     - "Rakefile"
     - "node_modules/**/*"
+    - "db/schema.rb"
