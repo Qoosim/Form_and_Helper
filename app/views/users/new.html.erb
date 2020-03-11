@@ -1,7 +1,8 @@
-<!--
 <div class="title">
   <h1>Create A New User</h1>
 </div>
+
+<!--
 <div class="outer-container">
   <div class="form-container">
     <form action="/users" method="post" accept-charset="UTF-8">
@@ -26,7 +27,7 @@
 -->
 
 <!--
-<%= form_tag('/user') do -%>
+<%= form_tag users_path do -%>
   <%= label_tag 'username' %><br>
   <%= text_field_tag 'username' %><br><br>
 
@@ -43,18 +44,31 @@
 <% end -%>
 -->
 
-<%= form_for(@user) do |f| %>
-  <%= f.label :username %><br>
-  <%= f.text_field :username %><br><br>
+<div class="outer-container">
+  <div class="form-container">
+    <%= form_for(@user) do |f| %>
 
-  <%= f.label :email %><br>
-  <%= f.text_field :email %><br><br>
+      <% if @user.errors.any? %>
+        <%= pluralize(@user.errors.count, 'error')%> prevented this form from being saved
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      <% end %>
+      <%= f.label :username %><br>
+      <%= f.text_field :username %><br><br>
 
-  <%= f.label :password %><br>
-  <%= f.password_field :password %><br><br>
+      <%= f.label :email %><br>
+      <%= f.text_field :email %><br><br>
 
-  <%= f.label :password_confirmation %><br>
-  <%= f.password_field :password_confirmation %><br><br>
+      <%= f.label :password %><br>
+      <%= f.password_field :password %><br><br>
 
-  <%= f.submit 'Create' %>
-<% end %>
+      <%= f.label :password_confirmation %><br>
+      <%= f.password_field :password_confirmation %><br><br>
+
+      <%= f.submit 'Create' %>
+    <% end %>
+  </div>
+</div>
